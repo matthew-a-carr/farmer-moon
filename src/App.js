@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header";
 import ToolHeader from './components/ToolHeader';
+import CornTool from './components/CornTool';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <ToolHeader title="Calculate the cost of a trip to market"/>
-      <ToolHeader title="Calculate to market"/>
+
+     <CornTool />
+
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
