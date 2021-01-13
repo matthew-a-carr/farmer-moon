@@ -14,8 +14,10 @@ const CornTool = () => {
 
     return (
         <>
+            <h3>Bags of corn</h3>
             <QuantitySelector quantity={numberOfBags} onQuantityChange={onChangeCornQuantity} />
-            <p>{costOfTrip}</p>
+            <h3>Total cost of trips</h3>
+            <p>{costOfTrip}p</p>
         </>
     );
 }
