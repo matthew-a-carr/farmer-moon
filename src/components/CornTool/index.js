@@ -23,7 +23,7 @@ const CornTool = () => {
 
     return (
         <div className="cornTool">
-            <ToolHeader title="Calculate the cost of a trip to market"/>
+            <ToolHeader title="Calculate the cost of taking corn to market"/>
             <h3>Bags of corn</h3>
             <QuantitySelector quantity={numberOfBags} onQuantityChange={onChangeCornQuantity} />
             
