@@ -1,4 +1,7 @@
+import './styles.css';
 import React from 'react';
+import arrow from './arrow.svg';
+import arrowUp from './arrow-up.svg';
 
 const QuantitySelector = ({ quantity, onQuantityChange }) => {
     const onDown = () => {
@@ -10,11 +13,11 @@ const QuantitySelector = ({ quantity, onQuantityChange }) => {
     }
 
     return (
-        <>
-            <button onClick={onDown}>down</button>
-            <p>{quantity}</p>
-            <button onClick={onUp}>up</button>
-        </>
+        <div className="quantitySelector">
+            <button className="quantitySelector__button" onClick={onDown}><img src={arrow}/></button>
+            <p className="quantitySelector__value">{quantity}</p>
+            <button className="quantitySelector__button" onClick={onUp}><img src={arrowUp}/></button>
+        </div>
     )
 }
 
