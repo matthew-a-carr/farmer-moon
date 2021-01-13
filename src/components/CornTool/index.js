@@ -4,6 +4,13 @@ import ToolHeader from '../ToolHeader';
 import QuantitySelector from '../QuantitySelector';
 import { calculateCostOfTrip } from '../../lib/cornCalculations';
 
+const formatPrice = (p) => {
+    const pounds = Math.floor(p/100);
+    const pence = (p/100 - pounds)*100;
+
+    return `£${pounds}.${pence === 0 ? '00' : pence}`
+};
+
 const CornTool = () => {
     const [ numberOfBags, setNumberOfBags ] = useState(0);
 
@@ -22,7 +29,7 @@ const CornTool = () => {
             
             <div className="cornTools__totalCost">
                 <h3>Total cost of trips</h3>
-                <p>{costOfTrip}p</p>
+                <p>{formatPrice(costOfTrip)}</p>
             </div>
             
 
