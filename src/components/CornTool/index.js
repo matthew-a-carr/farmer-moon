@@ -19,10 +19,17 @@ const CornTool = () => {
             <ToolHeader title="Calculate the cost of a trip to market"/>
             <h3>Bags of corn</h3>
             <QuantitySelector quantity={numberOfBags} onQuantityChange={onChangeCornQuantity} />
-            <h3>Total cost of trips</h3>
-            <p>{costOfTrip}p</p>
+            
+            <div className="cornTools__totalCost">
+                <h3>Total cost of trips</h3>
+                <p>{costOfTrip}p</p>
+            </div>
+            
 
-            <button onClick={() => { onChangeCornQuantity(0)}}>Reset</button>
+            <div className="cornTool__resetContainer">
+                <button className="cornTool__reset" onClick={() => { onChangeCornQuantity(0)}}>Reset</button>
+            </div>
+        
         </div>
     );
 }

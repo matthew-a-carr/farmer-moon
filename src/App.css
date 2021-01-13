@@ -1,9 +1,5 @@
-.App {
-  background-color: #2200F2;
-}
-
 h1 { 
-  margin: 0;
+  margin: 1em;
   color: #FFF500;
 }
 
@@ -15,6 +11,7 @@ div#root {
 body,
 html {
   color: #FFF500;
+  background-color: #2200F2;
   margin: 0;
   padding: 0;
 }

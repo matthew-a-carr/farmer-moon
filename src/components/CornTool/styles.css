@@ -3,3 +3,22 @@
     margin: 2em;
     padding: 1em;
 }
+
+.cornTools__totalCost {
+    border: 1px solid #FFF500;
+    margin: 1em;
+    padding: 1em;
+}
+
+.cornTool__resetContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.cornTool__reset {
+    background-color: #FFF500;
+    border: none;
+    color: #2200F2;
+    padding: 2em;
+    text-align: center;
+}
