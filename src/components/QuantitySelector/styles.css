@@ -1,0 +1,10 @@
+.quantitySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.quantitySelector__button {
+    background-color: #2200F2;
+    border: none;
+}
