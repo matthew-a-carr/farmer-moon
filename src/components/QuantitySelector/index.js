@@ -14,7 +14,7 @@ const QuantitySelector = ({ quantity, onQuantityChange }) => {
 
     return (
         <div className="quantitySelector">
-            <button className="quantitySelector__button" onClick={onDown}><img src={arrow}/></button>
+            <button disabled={quantity <= 0} className="quantitySelector__button" onClick={onDown}><img src={arrow}/></button>
             <p className="quantitySelector__value">{quantity}</p>
             <button className="quantitySelector__button" onClick={onUp}><img src={arrowUp}/></button>
         </div>
