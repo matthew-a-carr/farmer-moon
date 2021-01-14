@@ -1,8 +1,8 @@
-export const calculateCostOfJourney = (numberOfBagsOfCorn, costPerBag = 25) => {
-    if (numberOfBagsOfCorn <= 0) {
-        return costPerBag;
+export const calculateCostOfJourney = (numberOfTrips, costPerTrip = 25) => {
+    if (numberOfTrips <= 0) {
+        return 0;
     }
-    return numberOfBagsOfCorn * costPerBag;
+    return numberOfTrips * costPerTrip;
 };
 
 export default {
