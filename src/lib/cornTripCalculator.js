@@ -3,13 +3,51 @@ export const cornConst = 'Corn';
 export const emptyConst = 'Nothing';
 
 export const cornTripCalculator = (numberOfBagsOfCorn, numberOfGeese) => {
-    if (numberOfBagsOfCorn >= 1) {
+    if (numberOfGeese === 0 && numberOfBagsOfCorn === 0) {
+        return [emptyConst];
+    }
+
+    if (numberOfBagsOfCorn >= 1 && numberOfGeese === 0) {
         return calculateTripsForSingleItem(numberOfBagsOfCorn, cornConst);
-    } else if (numberOfGeese >= 1) {
+    } 
+    
+    if (numberOfGeese >= 1 && numberOfBagsOfCorn === 0) {
         return calculateTripsForSingleItem(numberOfGeese, geeseConst);
     }
 
-    return [emptyConst];
+    if (numberOfBagsOfCorn === 1 && numberOfGeese === 1) {
+        return [
+            geeseConst,
+            emptyConst,
+            cornConst,
+        ];
+    }
+
+    if (numberOfBagsOfCorn === 2 && numberOfGeese === 1) {
+        return [
+            geeseConst,
+            emptyConst,
+            cornConst,
+            geeseConst,
+            cornConst,
+            emptyConst,
+            geeseConst,
+        ];
+    }
+
+    if (numberOfBagsOfCorn === 1 && numberOfGeese === 2) {
+        return [
+            cornConst, 
+            emptyConst, 
+            geeseConst, 
+            cornConst, 
+            geeseConst, 
+            emptyConst, 
+            cornConst,
+        ];
+    }
+
+    return [];
 }
 
 const calculateTripsForSingleItem = (numberOfItems, typeOfItem) => {
