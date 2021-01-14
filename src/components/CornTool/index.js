@@ -2,7 +2,7 @@ import './styles.css';
 import React, { useState } from 'react';
 import ToolHeader from '../ToolHeader';
 import QuantitySelector from '../QuantitySelector';
-import { calculateCostOfTrip } from '../../lib/cornCalculations';
+import { calculateCostOfJourney } from '../../lib/cornCalculations';
 
 const formatPrice = (p) => {
     const pounds = Math.floor(p / 100);
@@ -14,11 +14,11 @@ const formatPrice = (p) => {
 const CornTool = () => {
     const [numberOfBags, setNumberOfBags] = useState(0);
 
-    const [costOfTrip, setCostOfTrip] = useState(calculateCostOfTrip(0));
+    const [costOfTrip, setCostOfTrip] = useState(calculateCostOfJourney(0));
 
     const onChangeCornQuantity = (q) => {
         setNumberOfBags(q);
-        setCostOfTrip(calculateCostOfTrip(q));
+        setCostOfTrip(calculateCostOfJourney(q));
     }
 
     return (
