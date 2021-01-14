@@ -4,6 +4,7 @@ import ToolHeader from '../ToolHeader';
 import QuantitySelector from '../QuantitySelector';
 import { calculateCostOfJourney } from '../../lib/cornCalculations';
 import { cornTripCalculator } from '../../lib/cornTripCalculator';
+import Journey from '../Journey';
 
 const formatPrice = (p) => {
     const pounds = Math.floor(p / 100);
@@ -36,17 +37,26 @@ const CornTool = () => {
 
     return (
         <div className="cornTool">
-            <ToolHeader title="Plan your trip to or from market" />
-            <h3>Bags of corn</h3>
+            <p>Only the following combinations are possile</p>
+            <ul>
+                <li>No geese, no corn</li>
+                <li>No geese, all corn</li>
+                <li>All geese, no corn</li>
+                <li>1 goose, 1 corn</li>
+                <li>1 goose, 2 corn</li>
+                <li>2 geese, 1 corn</li>    
+            </ul>
+            <p>Enter the number of <strong>bags of corn</strong></p>
             <QuantitySelector quantity={numberOfBags} onQuantityChange={onChangeCornQuantity} />
+            <p>Enter the number of <strong>geese</strong></p>
             <QuantitySelector quantity={numberOfGeese} onQuantityChange={onChangeGeeseQuantity} />
+
+            <Journey trips={journey} />
 
             <div className="cornTools__totalCost">
                 <h3>Total cost of trips</h3>
                 <p>{formatPrice(costOfTrip)}</p>
             </div>
-
-            <div>{journey}</div>
 
             <div className="cornTool__resetContainer">
                 <button className="cornTool__reset" onClick={() => { onChangeCornQuantity(0) }}>Reset</button>

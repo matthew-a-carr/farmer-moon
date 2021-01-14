@@ -1,5 +1,5 @@
-export const geeseConst = 'Geese';
-export const cornConst = 'Corn';
+export const geeseConst = 'goose';
+export const cornConst = 'bag of corn';
 export const emptyConst = 'Nothing';
 
 export const cornTripCalculator = (numberOfBagsOfCorn, numberOfGeese) => {
