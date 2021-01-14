@@ -1,6 +1,5 @@
 import './styles.css';
 import React, { useState } from 'react';
-import ToolHeader from '../ToolHeader';
 import QuantitySelector from '../QuantitySelector';
 import { calculateCostOfJourney } from '../../lib/cornCalculations';
 import { cornTripCalculator } from '../../lib/cornTripCalculator';
@@ -17,7 +16,7 @@ const CornTool = () => {
     const [numberOfBags, setNumberOfBags] = useState(0);
     const [numberOfGeese, setNumberOfGeese] = useState(0);
 
-    const [costOfTrip, setCostOfTrip] = useState(calculateCostOfJourney(0));
+    const [costOfTrip, setCostOfTrip] = useState(calculateCostOfJourney(1));
 
     const [journey, setJourney] = useState(cornTripCalculator(0,0));
 
@@ -31,6 +30,14 @@ const CornTool = () => {
     const onChangeGeeseQuantity = (g) => {
         setNumberOfGeese(g);
         const j = cornTripCalculator(numberOfBags, g);
+        setCostOfTrip(calculateCostOfJourney(j.length));
+        setJourney(j);
+    }
+
+    const reset = () => {
+        setNumberOfGeese(0);
+        setNumberOfBags(0);
+        const j = cornTripCalculator(0, 0);
         setCostOfTrip(calculateCostOfJourney(j.length));
         setJourney(j);
     }
@@ -59,7 +66,7 @@ const CornTool = () => {
             </div>
 
             <div className="cornTool__resetContainer">
-                <button className="cornTool__reset" onClick={() => { onChangeCornQuantity(0) }}>Reset</button>
+                <button className="cornTool__reset" onClick={() => { reset() }}>Reset</button>
             </div>
 
         </div>
